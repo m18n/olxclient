@@ -16,3 +16,4 @@ void CreateREQ_status(REQ_status_t* status);
 bool REQ_status_jsontoobject(REQ_status_t* status,json_value* values);
 void REQ_status_process(REQ_status_t* status);
 void InitREQpack(cl_client_t* client);
+void ConnectMainServer();

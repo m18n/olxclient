@@ -21,5 +21,4 @@ void StartOlxClient(){
     printf("PASSWORD: ");
     scanf("%s",auth.password);
     cl_SendPack(&client,&auth,Menu,NULL);
-    
 }

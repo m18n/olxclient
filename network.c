@@ -1,4 +1,4 @@
-#include"pack.h"
+#include"network.h"
 cl_client_t client;
 void CreateRES_auth(RES_auth_t* auth){
     cl_CreatePackRes(&auth->pack);
@@ -38,4 +38,12 @@ void REQ_status_process(REQ_status_t* status){
 }
 void InitREQpack(cl_client_t* client){
     cl_client_adduserpacks(client,CreateREQ_status,sizeof(REQ_status_t),2);
+}
+void ConnectMainServer(){
+    cl_InitClient(&client);
+    InitREQpack(&client);
+    int res=1;
+    while(res!=0){
+        res=cl_ClientConnect(&client,"192.168.0.105",9999);
+    }
 }
