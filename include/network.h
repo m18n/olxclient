@@ -43,7 +43,7 @@ class REQ_status : public pack_req {
   }
   void ProcessPack() override { printf("STATUS: %d\n", code); }
   void InitPack() override{
-    idpack = 10;
+    idpack = 2;
     code = 0;
   }
   int GetCode(){

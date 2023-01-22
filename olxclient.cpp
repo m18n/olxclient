@@ -26,5 +26,5 @@ void StartOlxClient(){
     auth.SetName(user);
     auth.SetPassword(pass);
     cl.SendPack(&auth,Menu);
-    cl.SendPack(&auth,Menu);
+    
 }
