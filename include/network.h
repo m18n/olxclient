@@ -33,6 +33,10 @@ class REQ_status : public pack_req {
   int code;
 
  public:
+ REQ_status(){
+  code=0;
+  idpack=2;
+ }
   bool JsonToData(json_value* json) override{
     json_object_entry* jcode = pars::jsonGetNameKey(json, "code");
     if (jcode != NULL && jcode->value->type == json_integer) {
@@ -42,10 +46,6 @@ class REQ_status : public pack_req {
     return false;
   }
   void ProcessPack() override { printf("STATUS: %d\n", code); }
-  void InitPack() override{
-    idpack = 2;
-    code = 0;
-  }
   int GetCode(){
     return code;
   }
