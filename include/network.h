@@ -10,6 +10,12 @@ class RES_auth: public pack_res{
   RES_auth(){
     idpack=1;
   }
+  void SetName(std::string name){
+    this->name=name;
+  }
+  void SetPassword(std::string pass){
+    this->password=pass;
+  }
   pars::json_construct GetJsonPack() override{
     pars::json_construct json;
     pars::json_item name;
@@ -39,6 +45,9 @@ class REQ_status : public pack_req {
   void InitPack() override{
     idpack = 10;
     code = 0;
+  }
+  int GetCode(){
+    return code;
   }
 };
 void ConnectMainServer();

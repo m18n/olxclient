@@ -5,7 +5,7 @@ int main() {
   printf("HELLO CLIENT START\n");
   try {
     ConnectMainServer();
-    
+    StartOlxClient();
   } catch (NetworkExeption& ntw) {
     std::cout << ntw.what();
   }
